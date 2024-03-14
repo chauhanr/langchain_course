@@ -13,8 +13,8 @@ deployment_name = os.getenv("DEPLOYMENT_NAME")
 def run_agents(chat: AzureChatOpenAI, query: str):
     prompt = ChatPromptTemplate(
         messages=[
-            HumanMessagePromptTemplate.from_template("{input}"), 
-            MessagesPlaceholder(variable_name="agent_scratchpad")
+            HumanMessagePromptTemplate.from_template("{input}") 
+            # MessagesPlaceholder(variable_name="agent_scratchpad")
         ]
     ) 
 
@@ -42,6 +42,6 @@ if __name__ == "__main__":
         deployment_name=deployment_name
     )
 
-    res = run_agents(chat, "How many pending orders are present in my database.")
+    res = run_agents(chat, "How many pending orders are present in my database?")
     print(res)
     

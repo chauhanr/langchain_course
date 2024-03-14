@@ -5,6 +5,7 @@ from langchain.tools import Tool
 
 conn = sqlite3.connect("db.sqlite")
 def run_sql(sql):
+    print(f"SQL: {sql}")
     cursor = conn.cursor()
     cursor.execute(sql)
     conn.commit()
